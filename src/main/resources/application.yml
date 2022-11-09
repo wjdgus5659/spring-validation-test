@@ -1,0 +1,19 @@
+server:
+  servlet:
+    contextPath: /validation-test
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mariadb://localhost:3306/matt
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: root
+    password: admin
+  jpa:
+    properties:
+      hibernate:
+        default_schema: MATT
+    show-sql: true
+  sql:
+    init:
+      mode: always

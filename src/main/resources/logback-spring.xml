@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" scan="true" scanPeriod="30 seconds">
+    <appender name="logfile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>./logs/validation-test.log</file>
+        <layout>
+            <Pattern>[%d{YYYY-MM-dd HH:mm:ss}] [%-5p] [%F:%L] %m%n</Pattern>
+        </layout>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>./logs/backup_%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>100</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <layout>
+            <Pattern>[%d{YYYY-MM-dd HH:mm:ss}] [%-5p] [%F:%L] %m%n</Pattern>
+        </layout>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="console" />
+    </root>
+</configuration>
